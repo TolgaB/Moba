@@ -892,14 +892,22 @@ socket.on('information', function (data)
     }
 
     for (var i = 0; i < 1; i++ ) {
+<<<<<<< HEAD
         //These are all the variables that are being returned from the server this is VERY IMPORTANT
         bluenexusdata[i].position = new PIXI.Point(data.bluenexusdata[i].position.x, data.bluenexusdata[i].position.y);
+=======
+        bluenexusdata[i].position = new PIXI.Point(data.bluenexus[i].position.x, data.bluenexus[i].position.y);
+>>>>>>> 4453b089ab339ca90532c7c9b8fb7db628409c5c
 
     }
 
      for (var i = 0; i < 1; i++ ) {
+<<<<<<< HEAD
         //These are all the variables that are being returned from the server this is VERY IMPORTANT
         orangenexusdata[i].position = new PIXI.Point(data.orangenexusdata[i].position.x, data.orangenexusdata[i].position.y);
+=======
+        orangenexusdata[i].position = new PIXI.Point(data.orangenexus[i].position.x, data.orangenexus[i].position.y);
+>>>>>>> 4453b089ab339ca90532c7c9b8fb7db628409c5c
 
     }
 
