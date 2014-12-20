@@ -22,7 +22,7 @@ requestAnimFrame( animate );
 
 //global variables
 var playerid = {team: 0, number: 0};
-
+//Define the keys pressed
 var keysDown = {
     left: false,
     right: false,
@@ -33,6 +33,7 @@ var keysDown = {
     recent: "right"
 };
 
+//Add the team and the DATA
 var blueteamdata = [];
 
 var orangeteamdata = [];
@@ -134,53 +135,70 @@ for(var i = 0; i < 5; i++)
     orangeteamdata.push(bunny);
 }
 
+//Initialize the variable AND THE DATA
 var minionsblueteamdata = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteamdata = [];
 
+//Initialize the variable AND THE DATA
 var minionsblueteam = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteam = [];
 
+//Initialize the variable AND THE DATA
 var minionsblueteam2 = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteam2 = [];
 
+//Initialize the variable AND THE DATA
 var minionsblueteam2data = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteam2data = [];
 
+//Initialize the variable AND THE DATA
 var minionsblueteam3 = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteam3 = [];
 
+//Initialize the variable AND THE DATA
 var minionsblueteam3data = [];
 
+//Initialize the variable AND THE DATA
 var minionsorangeteam3data = [];
 
+//Initialize the variable AND THE DATA
 var bluetowers = [];
 
+//Initialize the variable AND THE DATA
 var bluetowersdata = [];
 
+//Initialize the variable AND THE DATA
 var orangetowers = [];
 
+//Initialize the variable AND THE DATA
 var obstacles = [];
 
+//Initialize the variable AND THE DATA
 var obstaclesdata = [];
 
-
+//Initialize the variable AND THE DATA
 var blueshots = [];
 var blueshotsdata = [];
-
+//Initialize the variable AND THE DATA
 var orangeshots = [];
 var orangeshotsdata =[];
-
+//Initialize the variable AND THE DATA
 var orangetowersdata = [];
 
-
+//Initialize the variable AND THE DATA
 var bluenexus = [];
 var bluenexusdata = [];
-
+//Initialize the variable AND THE DATA
 var orangenexus = [];
 var orangenexusdata = [];
 
@@ -788,13 +806,15 @@ for (var y = 0; y < 5; y++)
 
 
 
-
+//Initialize the map images
 var rectangletexture = PIXI.Texture.fromImage("images/map.jpg");
 var rectangletexture2 = PIXI.Texture.fromImage("images/map2.jpg");
 
+
+//Initialize the images for the obstacles
 var rectangletexture = PIXI.Texture.fromImage("images/herpyrectangle.jpg");
 
-
+//The will add the top border
 var topRect = new PIXI.Sprite(rectangletexture);
 topRect.anchor.x = 0.5;
 topRect.anchor.y = 0.5;
@@ -802,7 +822,7 @@ topRect.position.x = 0;
 topRect.position.y = 0;
 stage.addChild(topRect);
 
-
+//This will add the bottom border
 var botRect = new PIXI.Sprite(rectangletexture2);
 botRect.anchor.x = 0;
 botRect.anchor.y = 0;
@@ -812,6 +832,7 @@ botRect.position.x = 0;
 botRect.position.y = 500;
 stage.addChild(botRect);
 
+//This will add the left border
 var leftRect = new PIXI.Sprite(rectangletexture);
 leftRect.rotation = 90 * (Math.PI/180);
 leftRect.anchor.x = 0;
@@ -822,6 +843,7 @@ leftRect.position.x = 0;
 leftRect.position.y = 0;
 stage.addChild(leftRect);
 
+//This will add the right border
 var rightRect = new PIXI.Sprite(rectangletexture2);
 rightRect.rotation = 90 * (Math.PI/180);
 rightRect.anchor.x = 0;
@@ -842,6 +864,7 @@ socket.on('information', function (data)
 {
     for(var i = 0; i < 5; i++)
     {
+        //These are all the variables that are being returned from the server this is VERY IMPORTANT
         blueteamdata[i].position = new PIXI.Point(data.blueteam[i].position.x,data.blueteam[i].position.y);
         orangeteamdata[i].position = new PIXI.Point(data.orangeteam[i].position.x,data.orangeteam[i].position.y);
 
@@ -857,32 +880,37 @@ socket.on('information', function (data)
 
     for(var i = 0; i < 6; i++)
     {
+        //These are all the variables that are being returned from the server this is VERY IMPORTANT
         bluetowersdata[i].position = new PIXI.Point(data.bluetowers[i].position.x, data.bluetowers[i].position.y);
         orangetowersdata[i].position = new PIXI.Point(data.orangetowers[i].position.x, data.orangetowers[i].position.y);
     }
     for(var i = 0; i < 5; i++)
     {
-
+        //These are all the variables that are being returned from the server this is VERY IMPORTANT
         obstaclesdata[i].position = new PIXI.Point(data.obstacles[i].position.x, data.obstacles[i].position.y);
 
     }
 
     for (var i = 0; i < 1; i++ ) {
+        //These are all the variables that are being returned from the server this is VERY IMPORTANT
         bluenexusdata[i].position = new PIXI.Point(data.bluenexusdata[i].position.x, data.bluenexusdata[i].position.y);
 
     }
 
      for (var i = 0; i < 1; i++ ) {
+        //These are all the variables that are being returned from the server this is VERY IMPORTANT
         orangenexusdata[i].position = new PIXI.Point(data.orangenexusdata[i].position.x, data.orangenexusdata[i].position.y);
 
     }
 
     for(var i = 0; i < blueshots.length; i++)
     {
+        //Removing the bullets
         stage.removeChild(blueshots[i]);
     }
     for(var i = 0; i < blueshotsdata.length; i++)
     {
+        //Removing the bullets
         stage.removeChild(blueshotsdata[i]);
     }
 
@@ -891,6 +919,7 @@ socket.on('information', function (data)
 
     for(var i = 0; i < data.blueshots.length; i++)
     {
+        ///////ADDING THE BLUE BULLETS
         // console.log(data.blueshots);
         var texture = PIXI.Texture.fromImage("orange.png");
         // create a new Sprite using the texture
@@ -914,6 +943,7 @@ socket.on('information', function (data)
 
     for(var i = 0; i < data.blueshots.length; i++)
     {
+        //This what happens when the nexus is destroyed
         var texture = PIXI.Texture.fromImage("lastexplosion.png");
         // create a new Sprite using the texture
         var bunny = new PIXI.Sprite(texture);
@@ -938,10 +968,12 @@ socket.on('information', function (data)
 
     for(var i = 0; i < orangeshots.length; i++)
     {
+        //Removing the orange bullets
         stage.removeChild(orangeshots[i]);
     }
     for(var i = 0; i < orangeshotsdata.length; i++)
     {
+        //Removing the orange bullets
         stage.removeChild(orangeshotsdata[i]);
     }
 
@@ -950,6 +982,7 @@ socket.on('information', function (data)
 
     for(var i = 0; i < data.orangeshots.length; i++)
     {
+        //This is the code to add the orange bullets
         // console.log(data.blueshots);
         var texture = PIXI.Texture.fromImage("orange.png");
         // create a new Sprite using the texture
@@ -1040,10 +1073,12 @@ function animate() {
     var player;
     if(playerid.team == 0)
     {
+        //Find player data
         player = blueteamdata[playerid.number];
     }
     else if(playerid.team == 1)
     {
+        //Find player data
         player = orangeteamdata[playerid.number];
     }
 
@@ -1151,7 +1186,16 @@ function animate() {
     // render the stage
     renderer.render(stage);
 }
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////THIS IS OPTIONAL LEAP MOTION CODE YOU DONT NEED IT/////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+*/
 
 
 // Setup Leap loop with frame callback function
@@ -1217,7 +1261,19 @@ Leap.loop(controllerOptions, function(frame) {
 
 
 //helper functions
+/*
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////THIS IS WHERE WE DETECT KEYSTROKES/////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*/
 document.addEventListener('keydown', function(event) {
 
     if(event.keyCode == 37) {
