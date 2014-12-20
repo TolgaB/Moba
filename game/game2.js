@@ -64,13 +64,17 @@ window.onload = function(){
     game.fps = 60;
     game.preload("character.png");
 
+    console.log("asdasd2");
 
     game.onload = function(){
+
+        console.log("as2dasd");
 
         hasloaded = true;
 
         for(var i = 0; i < 5; i++)
         {
+
             var bunny = new KevinSprite();
             bunny.image = game.assets["character.png"];
             bunny.realx = 200;
@@ -78,6 +82,8 @@ window.onload = function(){
             bunny.x = 200;
             bunny.y = 200;
             blueteam.push(bunny);
+            // game.rootScene.addChild(bunny);
+            console.log("asdasd");
         }
 
         for(var i = 0; i < 5; i++)
@@ -338,6 +344,7 @@ window.onload = function(){
 
         });
     }
+    game.start();
 };
 
 
