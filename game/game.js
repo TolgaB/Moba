@@ -56,8 +56,8 @@ for(var i = 0; i < 5; i++)
     bunny.position.x = 200;
     bunny.position.y = 150;
 
-    bunny.scale.x = 4;
-    bunny.scale.y = 4;
+    bunny.scale.x = 0.2;
+    bunny.scale.y = 0.2;
 
     stage.addChild(bunny);
 
@@ -68,7 +68,7 @@ for(var i = 0; i < 5; i++)
 for(var i = 0; i < 5; i++)
 {
     // create a texture from an image path
-    var texture = PIXI.Texture.fromImage("images/HEYAMAN.png");
+    var texture = PIXI.Texture.fromImage("images/character.png");
     // create a new Sprite using the texture
     var bunny = new PIXI.Sprite(texture);
 
@@ -80,8 +80,8 @@ for(var i = 0; i < 5; i++)
     bunny.position.x = 200;
     bunny.position.y = 150;
 
-    bunny.scale.x = 4;
-    bunny.scale.y = 4;
+    bunny.scale.x = 0.2;
+    bunny.scale.y = 0.2;
 
     stage.addChild(bunny);
 
@@ -792,7 +792,7 @@ for (var y = 0; y < 5; y++)
 var rectangletexture = PIXI.Texture.fromImage("images/map.jpg");
 var rectangletexture2 = PIXI.Texture.fromImage("images/map2.jpg");
 
-var rectangletexture = PIXI.Texture.fromImage("images/herpyrectangle.jpg");
+// var rectangletexture = PIXI.Texture.fromImage("images/herpyrectangle.jpg");
 
 
 var topRect = new PIXI.Sprite(rectangletexture);
