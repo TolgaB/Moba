@@ -1,5 +1,5 @@
 var fs = require("fs");
-var host = "172.16.1.160";
+var host = "localhost";
 var port = 5000;
 var express = require("express");
 var app = express();
@@ -370,7 +370,7 @@ for (i = 0; i < 1; i++) {
     playerdata.position.x = 2300;
     playerdata.position.y = 1750;
     playerdata.health = 10;
-    
+
     // playerdata.keysDown = {};
     bluenexus[i] = playerdata;
 

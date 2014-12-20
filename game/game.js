@@ -1,5 +1,5 @@
 //helper things to initiate
-var socket = io.connect('172.16.1.160:5000');
+var socket = io.connect('localhost:5000');
 // create an new instance of a pixi stage
 var stage = new PIXI.Stage(0x3498db,true);
 
@@ -770,7 +770,7 @@ for (var y = 0; y < 5; y++)
 
     stage.addChild(bunny);
 
-    orangenexus.push(bunny);
+    orangenexusdata.push(bunny);
 
 }
 
@@ -1114,7 +1114,7 @@ function animate() {
         // console
         blueshots[i].position = new PIXI.Point(blueshotsdata[i].position.x - (player.position.x - 500),blueshotsdata[i].position.y - (player.position.y - 300));
         // console.log(blueshots[i].position);
-        // console.log(blueshots.length);
+        console.log(blueshots.length);
     }
 
     for(var i = 0; i < orangeshots.length; i++)
@@ -1122,20 +1122,20 @@ function animate() {
         // console
         orangeshots[i].position = new PIXI.Point(orangeshotsdata[i].position.x - (player.position.x - 500),orangeshotsdata[i].position.y - (player.position.y - 300));
         // console.log(blueshots[i].position);
-        // console.log(orangeshots.length);
+        console.log(orangeshots.length);
     }
 
     for(var i = 0; i < bluenexus.length; i++)
     {
         // console
         bluenexus[i].position = new PIXI.Point(bluenexusdata[i].position.x - (player.position.x - 500),bluenexusdata[i].position.y - (player.position.y - 300));
-        
+
     }
     for(var i = 0; i < orangenexus.length; i++)
     {
         // console
         orangenexus[i].position = new PIXI.Point(orangenexusdata[i].position.x - (player.position.x - 500),orangenexusdata[i].position.y - (player.position.y - 300));
-        
+
     }
 
     topRect.position = new PIXI.Point(0 - (player.position.x - 500), 0 - (player.position.y - 300));
@@ -1158,8 +1158,6 @@ function animate() {
 var controllerOptions = {enableGestures: true};
 
 Leap.loop(controllerOptions, function(frame) {
-
-    var shoot = false;
 
     // console.log("ddd");
 
@@ -1205,21 +1203,12 @@ Leap.loop(controllerOptions, function(frame) {
               else {
                   swipeDirection = "down";
                   console.log('leap shoot down');
-                  shoot = true;
+                  keysDown.q = true;
 
               }
           }
        }
      }
-  }
-
-  if(shoot)
-  {
-    keysDown.q = true;
-  }
-  else
-  {
-    keysDown.q = false;
   }
 
 })
